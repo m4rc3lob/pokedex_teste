@@ -21,8 +21,9 @@ public class PokedexActivity extends AppCompatActivity {
 
     //criação do objeto recyclerView
     private RecyclerView recyclerView;
-
+    private Adapter adapter;
     private Button botaoFechar;
+
 
 
     //criando o array que vai armazenar as informações dos pokemons
@@ -46,7 +47,7 @@ public class PokedexActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         //instanciado nosso objeto adapter e executando a classe que preenche a pokedex
-        Adapter adapter = new Adapter( listaPokemons );
+        adapter = new Adapter( listaPokemons );
         this.criarPokedex();
 
         //criando e configurando o gerenciador de layout que vai exibir minha lista
@@ -59,58 +60,22 @@ public class PokedexActivity extends AppCompatActivity {
     }
 
     //lista dos pokemons
-    public void criarPokedex(){
+    public void criarPokedex() {
 
-        Pokemon pokemon = new Pokemon("Bulbasaur","001", "Grama", R.drawable.bulbasaur);
-        this.listaPokemons.add( pokemon );
 
-        pokemon = new Pokemon("Ivysaur","002", "Grama", R.drawable.ivysaur);
-        this.listaPokemons.add( pokemon );
+        Data data = new Data();
 
-        pokemon = new Pokemon("Venusaur","003", "Grama", R.drawable.venusaur);
-        this.listaPokemons.add( pokemon );
+        for (int i = 0; i<data.nome.length; i++){
 
-        pokemon = new Pokemon("Charmander","004", "Fogo", R.drawable.charmander);
-        this.listaPokemons.add( pokemon );
+            String nome = data.nome[i];
+            int foto = data.foto[i];
+            String tipo = data.tipo[i];
 
-        pokemon = new Pokemon("Charmeleon","005", "Fogo", R.drawable.charmeleon);
-        this.listaPokemons.add( pokemon );
+            String numero = String.valueOf(i+1);
+            Pokemon lista = new Pokemon(nome,"Nº "+numero, tipo, foto);
+            this.listaPokemons.add( lista );
+        }
 
-        pokemon = new Pokemon("Charizard","006", "Fogo", R.drawable.charizard);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Squirtle","007", "Água", R.drawable.squirtle);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Wartortle","008", "Água", R.drawable.wartortle);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Blastoise","009", "Água", R.drawable.blastoise);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Caterpie","010", "Inseto", R.drawable.caterpie);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Metapod","011", "Inseto", R.drawable.metapod);
-        this.listaPokemons.add( pokemon );
-
-        pokemon = new Pokemon("Butterfree","012", "Inseto, Voador", R.drawable.butterfree);
-        this.listaPokemons.add( pokemon );
-
-        String[] dadosPokemon = {
-                "Bulbasaur",
-                "Ivysaur",
-                "Venusaur",
-                "Charmander",
-                "Charmeleon",
-                "Charizard",
-                "Squirtle",
-                "Wartortle",
-                "Blastoise",
-                "Caterpie",
-                "Metapod",
-                "Butterfree"
-                };
     }
 
     public void voltarHome (View view){
