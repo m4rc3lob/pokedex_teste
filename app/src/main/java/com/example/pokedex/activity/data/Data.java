@@ -1,11 +1,11 @@
-package com.example.pokedex.activity.activity;
+package com.example.pokedex.activity.data;
 
 import com.example.pokedex.R;
 
-class Data {
+public class Data {
 
 
-    String[] nome = new String[]{
+    public String[] nome = new String[]{
             "Bulbasaur",
             "Ivysaur",
             "Venusaur",
@@ -159,7 +159,7 @@ class Data {
             "Mew"
     };
 
-    int[] foto = new int[]{
+    public int[] foto = new int[]{
             R.drawable.pokemon001,
             R.drawable.pokemon002,
             R.drawable.pokemon003,
@@ -313,7 +313,7 @@ class Data {
             R.drawable.pokemon151
     };
 
-    String[] tipo = {
+    public String[] tipo = {
             "Grama, Venenoso",
             "Grama, Venenoso",
             "Grama, Venenoso",

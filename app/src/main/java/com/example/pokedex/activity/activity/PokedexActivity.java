@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pokedex.R;
 import com.example.pokedex.activity.adapter.Adapter;
+import com.example.pokedex.activity.data.Data;
 import com.example.pokedex.activity.model.Pokemon;
 
 import java.util.ArrayList;
